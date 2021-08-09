@@ -1,0 +1,9 @@
+C:\Users\xvann\source\repos\ProdKeeper\DiskAccessLibrary.FileSystems.Abstractions\bin\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.deps.json
+C:\Users\xvann\source\repos\ProdKeeper\DiskAccessLibrary.FileSystems.Abstractions\bin\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.dll
+C:\Users\xvann\source\repos\ProdKeeper\DiskAccessLibrary.FileSystems.Abstractions\bin\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.pdb
+C:\Users\xvann\source\repos\ProdKeeper\DiskAccessLibrary.FileSystems.Abstractions\bin\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.xml
+C:\Users\xvann\source\repos\ProdKeeper\DiskAccessLibrary.FileSystems.Abstractions\obj\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.csproj.AssemblyReference.cache
+C:\Users\xvann\source\repos\ProdKeeper\DiskAccessLibrary.FileSystems.Abstractions\obj\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\DiskAccessLibrary.FileSystems.Abstractions\obj\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.dll
+C:\Users\xvann\source\repos\ProdKeeper\DiskAccessLibrary.FileSystems.Abstractions\obj\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.xml
+C:\Users\xvann\source\repos\ProdKeeper\DiskAccessLibrary.FileSystems.Abstractions\obj\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.pdb

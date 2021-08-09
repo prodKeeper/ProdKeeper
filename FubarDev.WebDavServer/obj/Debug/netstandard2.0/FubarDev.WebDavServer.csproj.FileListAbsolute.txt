@@ -1,0 +1,12 @@
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\bin\Debug\netstandard2.0\FubarDev.WebDavServer.xml
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\bin\Debug\netstandard2.0\FubarDev.WebDavServer.deps.json
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\bin\Debug\netstandard2.0\FubarDev.WebDavServer.dll
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\bin\Debug\netstandard2.0\FubarDev.WebDavServer.pdb
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\obj\Debug\netstandard2.0\FubarDev.WebDavServer.csproj.AssemblyReference.cache
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\obj\Debug\netstandard2.0\FubarDev.WebDavServer.Properties.Resources.resources
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\obj\Debug\netstandard2.0\FubarDev.WebDavServer.csproj.GenerateResource.cache
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\obj\Debug\netstandard2.0\FubarDev.WebDavServer.AssemblyInfoInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\obj\Debug\netstandard2.0\FubarDev.WebDavServer.AssemblyInfo.cs
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\obj\Debug\netstandard2.0\FubarDev.WebDavServer.csproj.CoreCompileInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\obj\Debug\netstandard2.0\FubarDev.WebDavServer.dll
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer\obj\Debug\netstandard2.0\FubarDev.WebDavServer.pdb

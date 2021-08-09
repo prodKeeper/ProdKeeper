@@ -1,0 +1,14 @@
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\bin\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.xml
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\bin\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.deps.json
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\bin\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.dll
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\bin\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.pdb
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\bin\Debug\netstandard2.0\FubarDev.WebDavServer.dll
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\bin\Debug\netstandard2.0\FubarDev.WebDavServer.pdb
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\bin\Debug\netstandard2.0\FubarDev.WebDavServer.xml
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\obj\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.csproj.AssemblyReference.cache
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\obj\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.AssemblyInfoInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\obj\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.AssemblyInfo.cs
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\obj\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.csproj.CoreCompileInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\obj\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.csproj.CopyComplete
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\obj\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.dll
+C:\Users\xvann\source\repos\ProdKeeper\FubarDev.WebDavServer.AspNetCore\obj\Debug\netstandard2.0\FubarDev.WebDavServer.AspNetCore.pdb

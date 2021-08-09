@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "t4SKLFTqD1k9RRllLbnlDM3v+lb9bynh+Ww7s4FQ2c2fj9OQ+FgatzXuXOnFD72ngSc26n4IR2wV7f/qqYJ1ng==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\Utilities\\Utilities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xvann\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\xvann\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

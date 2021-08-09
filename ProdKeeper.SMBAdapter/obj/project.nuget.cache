@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "BWFFjiLIu/XPbUv1mdSS5C3Wdm0mgDA86vfbGucnMqSqqmrVo3iSIC7LRz2iXRKt1SD8C4Gh/tNO9iE/kaX8jA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.SMBAdapter\\ProdKeeper.SMBAdapter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xvann\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\xvann\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

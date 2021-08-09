@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "IhHSRiKwr4st6bGRH6OGH0VidJwuQlAxJejKlqhZV13pA+ADnzTsMBwNWX+1eOgNZgNvKDFkJJFtEAcgsFAY1g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\DiskAccessLibrary.FileSystems.Abstractions\\DiskAccessLibrary.FileSystems.Abstractions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xvann\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\xvann\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
