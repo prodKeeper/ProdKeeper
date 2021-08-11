@@ -1,0 +1,9 @@
+C:\Users\xvann\source\repos\ProdKeeper\EncryptDecryptLib\bin\Debug\netstandard2.1\EncryptDecryptLib.deps.json
+C:\Users\xvann\source\repos\ProdKeeper\EncryptDecryptLib\bin\Debug\netstandard2.1\EncryptDecryptLib.dll
+C:\Users\xvann\source\repos\ProdKeeper\EncryptDecryptLib\bin\Debug\netstandard2.1\EncryptDecryptLib.pdb
+C:\Users\xvann\source\repos\ProdKeeper\EncryptDecryptLib\obj\Debug\netstandard2.1\EncryptDecryptLib.csproj.AssemblyReference.cache
+C:\Users\xvann\source\repos\ProdKeeper\EncryptDecryptLib\obj\Debug\netstandard2.1\EncryptDecryptLib.AssemblyInfoInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\EncryptDecryptLib\obj\Debug\netstandard2.1\EncryptDecryptLib.AssemblyInfo.cs
+C:\Users\xvann\source\repos\ProdKeeper\EncryptDecryptLib\obj\Debug\netstandard2.1\EncryptDecryptLib.csproj.CoreCompileInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\EncryptDecryptLib\obj\Debug\netstandard2.1\EncryptDecryptLib.dll
+C:\Users\xvann\source\repos\ProdKeeper\EncryptDecryptLib\obj\Debug\netstandard2.1\EncryptDecryptLib.pdb

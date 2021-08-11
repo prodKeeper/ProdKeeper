@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DiskAccessLibrary.FileSystems.Abstractions\DiskAccessLibrary.FileSystems.Abstractions.csproj" />
+    <ProjectReference Include="..\EncryptDecryptLib\EncryptDecryptLib.csproj" />
     <ProjectReference Include="..\FubarDev.WebDavServer.AspNetCore\FubarDev.WebDavServer.AspNetCore.csproj" />
     <ProjectReference Include="..\FubarDev.WebDavServer\FubarDev.WebDavServer.csproj" />
     <ProjectReference Include="..\PocSMB.Adapters\PocSMB.Adapters.csproj" />

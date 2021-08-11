@@ -17,6 +17,13 @@ namespace ProdKeeper.Models
         public int Id { get; set; }
         public string Libelle { get; set; }
         public byte[] FileContent { get; set; }
+        public DateTime DateCreated { get; set; }
+        public DateTime DateModified { get; set; }
+        public DateTime DateLastAccess { get; set; }
+        public double Version { get; set; }
+        public bool Hidden { get; set; }
+        public bool ReadOnly { get; set; }
+        public bool Archive { get; set; }
 
         public virtual ICollection<ItemMetadata> ItemMetadata { get; set; }
     }

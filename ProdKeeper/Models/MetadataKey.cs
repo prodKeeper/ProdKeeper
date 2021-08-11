@@ -11,12 +11,16 @@ namespace ProdKeeper.Models
     {
         public MetadataKey()
         {
+            InverseIdparentNavigation = new HashSet<MetadataKey>();
             MetadataValues = new HashSet<MetadataValues>();
         }
 
         public int Id { get; set; }
         public string Libelle { get; set; }
+        public int? Idparent { get; set; }
 
+        public virtual MetadataKey IdparentNavigation { get; set; }
+        public virtual ICollection<MetadataKey> InverseIdparentNavigation { get; set; }
         public virtual ICollection<MetadataValues> MetadataValues { get; set; }
     }
 }

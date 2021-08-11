@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CertificateManager;
+using EncryptDecryptLib;
+using Microsoft.AspNetCore.Identity;
 using ProdKeeper.Models;
 using SMBLibrary.Authentication.NTLM;
 using System;
@@ -10,6 +12,9 @@ namespace ProdKeeper.Services
 {
     public class ProdKeeperPasswordHasher<TUser> : IPasswordHasher<TUser> where TUser : class
     {
+        public ProdKeeperPasswordHasher()
+        {
+        }
         public string HashPassword(TUser user, string password)
         {
             ApplicationUser appUser = user as ApplicationUser;

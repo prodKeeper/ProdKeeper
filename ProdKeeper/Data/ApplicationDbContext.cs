@@ -16,6 +16,7 @@ namespace ProdKeeper.Data
         public virtual DbSet<ItemMetadata> ItemMetadata { get; set; }
         public virtual DbSet<MetadataKey> MetadataKey { get; set; }
         public virtual DbSet<MetadataValues> MetadataValues { get; set; }
+        public virtual DbSet<PatternsRepository> PatternsRepository { get; set; }
         public ApplicationDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
@@ -29,6 +30,18 @@ namespace ProdKeeper.Data
             modelBuilder.Entity<Item>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.DateCreated)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.DateLastAccess)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.DateModified)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.FileContent).IsRequired();
 
@@ -62,9 +75,16 @@ namespace ProdKeeper.Data
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
 
+                entity.Property(e => e.Idparent).HasColumnName("IDParent");
+
                 entity.Property(e => e.Libelle)
                     .IsRequired()
                     .HasMaxLength(55);
+
+                entity.HasOne(d => d.IdparentNavigation)
+                    .WithMany(p => p.InverseIdparentNavigation)
+                    .HasForeignKey(d => d.Idparent)
+                    .HasConstraintName("FK_MetadataKey_MetadataKey");
             });
 
             modelBuilder.Entity<MetadataValues>(entity =>
@@ -83,6 +103,22 @@ namespace ProdKeeper.Data
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_MetadataValues_MetadataKey");
             });
+
+            modelBuilder.Entity<PatternsRepository>(entity =>
+            {
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.Libelle)
+                    .IsRequired()
+                    .HasMaxLength(55);
+
+                entity.Property(e => e.Patterns)
+                    .IsRequired()
+                    .HasColumnName("patterns");
+            });
+
         }
     }
 }
