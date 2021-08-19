@@ -11,9 +11,9 @@ namespace ProdKeeper.Models
     {
         public int Id { get; set; }
         public int IdmetadataValue { get; set; }
-        public int Iditem { get; set; }
+        public int IditemVersion { get; set; }
 
-        public virtual Item IditemNavigation { get; set; }
+        public virtual ItemVersion IditemVersionNavigation { get; set; }
         public virtual MetadataValues IdmetadataValueNavigation { get; set; }
     }
 }

@@ -1,0 +1,13 @@
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\bin\Debug\netstandard2.0\ProdKeeper.SMBAdapter.deps.json
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\bin\Debug\netstandard2.0\ProdKeeper.SMBAdapter.dll
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\bin\Debug\netstandard2.0\ProdKeeper.SMBAdapter.pdb
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\bin\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.dll
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\bin\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.pdb
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\bin\Debug\netstandard2.0\DiskAccessLibrary.FileSystems.Abstractions.xml
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\obj\Debug\netstandard2.0\ProdKeeper.SMBAdapter.csproj.AssemblyReference.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\obj\Debug\netstandard2.0\ProdKeeper.SMBAdapter.AssemblyInfoInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\obj\Debug\netstandard2.0\ProdKeeper.SMBAdapter.AssemblyInfo.cs
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\obj\Debug\netstandard2.0\ProdKeeper.SMBAdapter.csproj.CoreCompileInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\obj\Debug\netstandard2.0\ProdKeeper.SMBAdapter.csproj.CopyComplete
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\obj\Debug\netstandard2.0\ProdKeeper.SMBAdapter.dll
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.SMBAdapter\obj\Debug\netstandard2.0\ProdKeeper.SMBAdapter.pdb

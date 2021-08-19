@@ -11,20 +11,18 @@ namespace ProdKeeper.Models
     {
         public Item()
         {
-            ItemMetadata = new HashSet<ItemMetadata>();
+            ItemVersion = new HashSet<ItemVersion>();
         }
 
         public int Id { get; set; }
         public string Libelle { get; set; }
-        public byte[] FileContent { get; set; }
         public DateTime DateCreated { get; set; }
-        public DateTime DateModified { get; set; }
         public DateTime DateLastAccess { get; set; }
-        public double Version { get; set; }
         public bool Hidden { get; set; }
         public bool ReadOnly { get; set; }
         public bool Archive { get; set; }
+        public bool IsDeleted { get; set; }
 
-        public virtual ICollection<ItemMetadata> ItemMetadata { get; set; }
+        public virtual ICollection<ItemVersion> ItemVersion { get; set; }
     }
 }

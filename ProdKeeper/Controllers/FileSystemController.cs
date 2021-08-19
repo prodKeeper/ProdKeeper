@@ -25,10 +25,11 @@ namespace ProdKeeper.Controllers
         public IEnumerable<string> Get()
         {
             var path=this.ControllerContext.RouteData.Values["path"].ToString();
-            FileSystemService fs = new FileSystemService(this._context);
+            FileSystemService fs= new FileSystemService(new FileSystemOption( this._context));
             var val = fs.GetFiles(path);
             var val2 = fs.GetFolders(path);
             return val.Concat(val2);
+            
         }
 
         // GET api/<FileSystemController>/5

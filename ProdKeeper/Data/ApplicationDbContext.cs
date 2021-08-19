@@ -14,6 +14,7 @@ namespace ProdKeeper.Data
     {
         public virtual DbSet<Item> Item { get; set; }
         public virtual DbSet<ItemMetadata> ItemMetadata { get; set; }
+        public virtual DbSet<ItemVersion> ItemVersion { get; set; }
         public virtual DbSet<MetadataKey> MetadataKey { get; set; }
         public virtual DbSet<MetadataValues> MetadataValues { get; set; }
         public virtual DbSet<PatternsRepository> PatternsRepository { get; set; }
@@ -39,12 +40,6 @@ namespace ProdKeeper.Data
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
 
-                entity.Property(e => e.DateModified)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.FileContent).IsRequired();
-
                 entity.Property(e => e.Libelle)
                     .IsRequired()
                     .HasMaxLength(55);
@@ -52,23 +47,46 @@ namespace ProdKeeper.Data
 
             modelBuilder.Entity<ItemMetadata>(entity =>
             {
+                entity.HasIndex(e => new { e.IditemVersion, e.IdmetadataValue })
+                    .HasName("IX_ItemMetadata")
+                    .IsUnique();
+
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.Iditem).HasColumnName("IDItem");
+                entity.Property(e => e.IditemVersion).HasColumnName("IDItemVersion");
 
                 entity.Property(e => e.IdmetadataValue).HasColumnName("IDMetadataValue");
 
-                entity.HasOne(d => d.IditemNavigation)
+                entity.HasOne(d => d.IditemVersionNavigation)
                     .WithMany(p => p.ItemMetadata)
-                    .HasForeignKey(d => d.Iditem)
+                    .HasForeignKey(d => d.IditemVersion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ItemMetadata_Item");
+                    .HasConstraintName("FK_ItemMetadata_ItemVersion");
 
                 entity.HasOne(d => d.IdmetadataValueNavigation)
                     .WithMany(p => p.ItemMetadata)
                     .HasForeignKey(d => d.IdmetadataValue)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ItemMetadata_MetadataValues");
+            });
+
+            modelBuilder.Entity<ItemVersion>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.DateCreated)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.FilePath).IsRequired();
+
+                entity.Property(e => e.Iditem).HasColumnName("IDItem");
+
+                entity.HasOne(d => d.IditemNavigation)
+                    .WithMany(p => p.ItemVersion)
+                    .HasForeignKey(d => d.Iditem)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ItemVersion_Item");
             });
 
             modelBuilder.Entity<MetadataKey>(entity =>
@@ -89,6 +107,10 @@ namespace ProdKeeper.Data
 
             modelBuilder.Entity<MetadataValues>(entity =>
             {
+                entity.HasIndex(e => new { e.Idkey, e.Libelle })
+                    .HasName("IX_MetadataValues")
+                    .IsUnique();
+
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Idkey).HasColumnName("IDKey");
