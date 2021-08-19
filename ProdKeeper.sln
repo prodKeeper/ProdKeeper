@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptDecryptLib", "Encryp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeperTests", "ProdKeeperTests\ProdKeeperTests.csproj", "{8B1E3B14-C97C-4793-84F6-8C8E5A0E8397}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.Entity", "ProdKeeper.Entity\ProdKeeper.Entity.csproj", "{2BC46334-E59B-4B0C-8E7B-5BEF3238F2DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.VirtualFileSystem", "ProdKeeper.VirtualFileSystem\ProdKeeper.VirtualFileSystem.csproj", "{A6932470-7641-42EB-9341-302FC63707D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{8B1E3B14-C97C-4793-84F6-8C8E5A0E8397}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B1E3B14-C97C-4793-84F6-8C8E5A0E8397}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B1E3B14-C97C-4793-84F6-8C8E5A0E8397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC46334-E59B-4B0C-8E7B-5BEF3238F2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC46334-E59B-4B0C-8E7B-5BEF3238F2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC46334-E59B-4B0C-8E7B-5BEF3238F2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC46334-E59B-4B0C-8E7B-5BEF3238F2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6932470-7641-42EB-9341-302FC63707D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6932470-7641-42EB-9341-302FC63707D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6932470-7641-42EB-9341-302FC63707D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6932470-7641-42EB-9341-302FC63707D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

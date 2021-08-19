@@ -4,30 +4,29 @@
     "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeperTests\\ProdKeeperTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\DiskAccessLibrary.FileSystems.Abstractions\\DiskAccessLibrary.FileSystems.Abstractions.csproj": {
+    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.Entity\\ProdKeeper.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\DiskAccessLibrary.FileSystems.Abstractions\\DiskAccessLibrary.FileSystems.Abstractions.csproj",
-        "projectName": "DiskAccessLibrary.FileSystems.Abstractions",
-        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\DiskAccessLibrary.FileSystems.Abstractions\\DiskAccessLibrary.FileSystems.Abstractions.csproj",
+        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.Entity\\ProdKeeper.Entity.csproj",
+        "projectName": "ProdKeeper.Entity",
+        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.Entity\\ProdKeeper.Entity.csproj",
         "packagesPath": "C:\\Users\\xvann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\DiskAccessLibrary.FileSystems.Abstractions\\obj\\",
+        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.Entity\\obj\\",
         "projectStyle": "PackageReference",
-        "crossTargeting": true,
         "configFilePaths": [
           "C:\\Users\\xvann\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,77 +37,16 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
               "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\EncryptDecryptLib\\EncryptDecryptLib.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\EncryptDecryptLib\\EncryptDecryptLib.csproj",
-        "projectName": "EncryptDecryptLib",
-        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\EncryptDecryptLib\\EncryptDecryptLib.csproj",
-        "packagesPath": "C:\\Users\\xvann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\EncryptDecryptLib\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\xvann\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
-          "dependencies": {
-            "CertificateManager": {
-              "target": "Package",
-              "version": "[1.0.5, )"
+              "version": "[3.1.15, )"
             },
-            "Microsoft.AspNetCore.WebUtilities": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "System.Text.Encodings.Web": {
-              "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[3.1.15, )"
             }
           },
           "imports": [
@@ -122,7 +60,7 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
@@ -130,33 +68,32 @@
         }
       }
     },
-    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer.AspNetCore\\FubarDev.WebDavServer.AspNetCore.csproj": {
+    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.VirtualFileSystem\\ProdKeeper.VirtualFileSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer.AspNetCore\\FubarDev.WebDavServer.AspNetCore.csproj",
-        "projectName": "FubarDev.WebDavServer.AspNetCore",
-        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer.AspNetCore\\FubarDev.WebDavServer.AspNetCore.csproj",
+        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.VirtualFileSystem\\ProdKeeper.VirtualFileSystem.csproj",
+        "projectName": "ProdKeeper.VirtualFileSystem",
+        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.VirtualFileSystem\\ProdKeeper.VirtualFileSystem.csproj",
         "packagesPath": "C:\\Users\\xvann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer.AspNetCore\\obj\\",
+        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.VirtualFileSystem\\obj\\",
         "projectStyle": "PackageReference",
-        "crossTargeting": true,
         "configFilePaths": [
           "C:\\Users\\xvann\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer\\FubarDev.WebDavServer.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer\\FubarDev.WebDavServer.csproj"
+              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.Entity\\ProdKeeper.Entity.csproj": {
+                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.Entity\\ProdKeeper.Entity.csproj"
               }
             }
           }
@@ -168,38 +105,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "JetBrains.Annotations": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2018.2.1, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Core": {
-              "target": "Package",
-              "version": "[2.0.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Formatters.Xml": {
-              "target": "Package",
-              "version": "[2.0.0, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
-            "Scrutor": {
-              "target": "Package",
-              "version": "[2.0.0, )"
-            },
-            "StyleCop.Analyzers": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.1.0-beta007, )"
-            }
-          },
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -210,159 +117,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer\\FubarDev.WebDavServer.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer\\FubarDev.WebDavServer.csproj",
-        "projectName": "FubarDev.WebDavServer",
-        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer\\FubarDev.WebDavServer.csproj",
-        "packagesPath": "C:\\Users\\xvann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "configFilePaths": [
-          "C:\\Users\\xvann\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "JetBrains.Annotations": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2018.2.1, )"
-            },
-            "Microsoft.Extensions.Logging.Abstractions": {
-              "target": "Package",
-              "version": "[2.0.0, )"
-            },
-            "Microsoft.Extensions.Options": {
-              "target": "Package",
-              "version": "[2.0.0, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
-            "StyleCop.Analyzers": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.1.0-beta007, )"
-            },
-            "System.Buffers": {
-              "target": "Package",
-              "version": "[4.0.0, )"
-            },
-            "System.Collections.Immutable": {
-              "target": "Package",
-              "version": "[1.2.0, )"
-            },
-            "System.Interactive.Async": {
-              "target": "Package",
-              "version": "[3.0.0, )"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\PocSMB.Adapters\\PocSMB.Adapters.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\PocSMB.Adapters\\PocSMB.Adapters.csproj",
-        "projectName": "PocSMB.Adapters",
-        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\PocSMB.Adapters\\PocSMB.Adapters.csproj",
-        "packagesPath": "C:\\Users\\xvann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\PocSMB.Adapters\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\xvann\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
-            "projectReferences": {
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\SMBLibrary\\SMBLibrary.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\SMBLibrary\\SMBLibrary.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
-            "System.Text.Json": {
-              "target": "Package",
-              "version": "[5.0.2, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
@@ -391,8 +150,8 @@
           "netcoreapp3.1": {
             "targetAlias": ".NETCoreApp,Version=v3.1",
             "projectReferences": {
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper\\ProdKeeper.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper\\ProdKeeper.csproj"
+              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.VirtualFileSystem\\ProdKeeper.VirtualFileSystem.csproj": {
+                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper.VirtualFileSystem\\ProdKeeper.VirtualFileSystem.csproj"
               }
             }
           }
@@ -443,244 +202,6 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper\\ProdKeeper.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper\\ProdKeeper.csproj",
-        "projectName": "ProdKeeper",
-        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper\\ProdKeeper.csproj",
-        "packagesPath": "C:\\Users\\xvann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\ProdKeeper\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\xvann\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
-            "projectReferences": {
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\DiskAccessLibrary.FileSystems.Abstractions\\DiskAccessLibrary.FileSystems.Abstractions.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\DiskAccessLibrary.FileSystems.Abstractions\\DiskAccessLibrary.FileSystems.Abstractions.csproj"
-              },
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\EncryptDecryptLib\\EncryptDecryptLib.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\EncryptDecryptLib\\EncryptDecryptLib.csproj"
-              },
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer.AspNetCore\\FubarDev.WebDavServer.AspNetCore.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer.AspNetCore\\FubarDev.WebDavServer.AspNetCore.csproj"
-              },
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer\\FubarDev.WebDavServer.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\FubarDev.WebDavServer\\FubarDev.WebDavServer.csproj"
-              },
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\PocSMB.Adapters\\PocSMB.Adapters.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\PocSMB.Adapters\\PocSMB.Adapters.csproj"
-              },
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\SMBLibrary\\SMBLibrary.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\SMBLibrary\\SMBLibrary.csproj"
-              },
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\Utilities\\Utilities.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
-              "target": "Package",
-              "version": "[3.1.15, )"
-            },
-            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[3.1.15, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[3.1.15, )"
-            },
-            "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[3.1.15, )"
-            },
-            "Microsoft.AspNetCore.SpaServices.Extensions": {
-              "target": "Package",
-              "version": "[3.1.15, )"
-            },
-            "Microsoft.EntityFrameworkCore.Relational": {
-              "target": "Package",
-              "version": "[3.1.15, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.1.15, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "target": "Package",
-              "version": "[3.1.15, )"
-            },
-            "System.IO.FileSystem": {
-              "target": "Package",
-              "version": "[4.3.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\SMBLibrary\\SMBLibrary.csproj": {
-      "version": "1.4.6.1",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\SMBLibrary\\SMBLibrary.csproj",
-        "projectName": "SMBLibrary",
-        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\SMBLibrary\\SMBLibrary.csproj",
-        "packagesPath": "C:\\Users\\xvann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\SMBLibrary\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "configFilePaths": [
-          "C:\\Users\\xvann\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
-            "projectReferences": {
-              "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\Utilities\\Utilities.csproj",
-                "privateAssets": "all"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\Utilities\\Utilities.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\Utilities\\Utilities.csproj",
-        "projectName": "Utilities",
-        "projectPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\Utilities\\Utilities.csproj",
-        "packagesPath": "C:\\Users\\xvann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\Utilities\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "configFilePaths": [
-          "C:\\Users\\xvann\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }

@@ -1,0 +1,12 @@
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\bin\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.deps.json
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\bin\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.dll
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\bin\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.pdb
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\bin\Debug\netcoreapp3.1\ProdKeeper.Entity.dll
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\bin\Debug\netcoreapp3.1\ProdKeeper.Entity.pdb
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.csproj.AssemblyReference.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.AssemblyInfoInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.AssemblyInfo.cs
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.csproj.CoreCompileInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.csproj.CopyComplete
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.dll
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.pdb

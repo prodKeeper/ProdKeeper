@@ -43,6 +43,10 @@ namespace ProdKeeper.Services.Tests
         {
             viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
             fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/France/Lorraine/", viewID.ToString()));
+            fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/France/Ile de france/", viewID.ToString()));
+            fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/Belgique/Luxembourg/", viewID.ToString()));
+            fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/Belgique/Namur/", viewID.ToString()));
+            fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/Allemagne/Sarre/", viewID.ToString()));
             var keys = _context.MetadataKey;
             var vals = _context.MetadataValues;
             if (keys.Where(k => k.Libelle == "Continent") == null || keys.Where(k => k.Libelle == "Pays") == null || keys.Where(k => k.Libelle == "Region") == null)
@@ -67,9 +71,12 @@ namespace ProdKeeper.Services.Tests
         [TestMethod()]
         public void GetFoldersTest()
         {
+            
             if (viewID == Guid.Empty)
                 viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
-            fileSystemService.GetFolders(string.Format("{0}/Geographie/Europe/France/Lorraine/", viewID.ToString()));
+            var folderFrance = fileSystemService.GetFolders(string.Format("{0}/Geographie/Europe/France/", viewID.ToString()));
+            var folderBelgique = fileSystemService.GetFolders(string.Format("{0}/Geographie/Europe/Belgique/", viewID.ToString()));
+            var folderAllemagne = fileSystemService.GetFolders(string.Format("{0}/Geographie/Europe/Allemagne/", viewID.ToString()));
         }
 
         [TestMethod()]

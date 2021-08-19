@@ -1,0 +1,9 @@
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\obj\Debug\netcoreapp3.1\ProdKeeper.Entity.AssemblyInfoInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\obj\Debug\netcoreapp3.1\ProdKeeper.Entity.AssemblyInfo.cs
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\obj\Debug\netcoreapp3.1\ProdKeeper.Entity.csproj.CoreCompileInputs.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\obj\Debug\netcoreapp3.1\ProdKeeper.Entity.csproj.AssemblyReference.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\bin\Debug\netcoreapp3.1\ProdKeeper.Entity.deps.json
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\bin\Debug\netcoreapp3.1\ProdKeeper.Entity.dll
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\bin\Debug\netcoreapp3.1\ProdKeeper.Entity.pdb
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\obj\Debug\netcoreapp3.1\ProdKeeper.Entity.dll
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\obj\Debug\netcoreapp3.1\ProdKeeper.Entity.pdb

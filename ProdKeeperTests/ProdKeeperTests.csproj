@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProdKeeper\ProdKeeper.csproj" />
+    <ProjectReference Include="..\ProdKeeper.VirtualFileSystem\ProdKeeper.VirtualFileSystem.csproj" />
   </ItemGroup>
 
 </Project>
