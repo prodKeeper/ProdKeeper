@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace ProdKeeper.Models
+namespace ProdKeeper.Entity.Models
 {
     public partial class prodkeeperContext : DbContext
     {
@@ -39,7 +39,8 @@ namespace ProdKeeper.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("name=ConnectionStrings:DefaultConnection");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=localhost;Database=prodkeeper;Trusted_Connection=True;MultipleActiveResultSets=true");
             }
         }
 
@@ -217,8 +218,6 @@ namespace ProdKeeper.Models
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
 
-                entity.Property(e => e.FilePath).IsRequired();
-
                 entity.Property(e => e.Iditem).HasColumnName("IDItem");
 
                 entity.HasOne(d => d.IditemNavigation)
@@ -244,6 +243,10 @@ namespace ProdKeeper.Models
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.DateCreated)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Idkey).HasColumnName("IDKey");
 

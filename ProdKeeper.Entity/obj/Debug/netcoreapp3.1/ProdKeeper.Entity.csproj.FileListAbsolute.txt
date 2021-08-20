@@ -7,3 +7,8 @@ C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\bin\Debug\netcoreapp3.1
 C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\bin\Debug\netcoreapp3.1\ProdKeeper.Entity.pdb
 C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\obj\Debug\netcoreapp3.1\ProdKeeper.Entity.dll
 C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\obj\Debug\netcoreapp3.1\ProdKeeper.Entity.pdb
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\bin\Debug\netcoreapp3.1\ProdKeeper.Entity.runtimeconfig.json
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\bin\Debug\netcoreapp3.1\ProdKeeper.Entity.runtimeconfig.dev.json
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\obj\Debug\netcoreapp3.1\ProdKeeper.Entity.genruntimeconfig.cache
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.Entity\bin\Debug\netcoreapp3.1\appsettings.json

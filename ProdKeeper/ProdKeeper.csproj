@@ -36,6 +36,7 @@
     <ProjectReference Include="..\PocSMB.Adapters\PocSMB.Adapters.csproj" />
     <ProjectReference Include="..\ProdKeeper.Entity\ProdKeeper.Entity.csproj" />
     <ProjectReference Include="..\ProdKeeper.VirtualFileSystem\ProdKeeper.VirtualFileSystem.csproj" />
+    <ProjectReference Include="..\SMBLibrary.Adapters\SMBLibrary.Adapters.csproj" />
     <ProjectReference Include="..\SMBLibrary\SMBLibrary.csproj" />
     <ProjectReference Include="..\Utilities\Utilities.csproj" />
   </ItemGroup>

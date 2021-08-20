@@ -1,7 +1,7 @@
 ﻿using CertificateManager;
 using EncryptDecryptLib;
 using Microsoft.AspNetCore.Identity;
-using ProdKeeper.Models;
+using ProdKeeper.Entity.Models;
 using SMBLibrary.Authentication.NTLM;
 using System;
 using System.Collections.Generic;

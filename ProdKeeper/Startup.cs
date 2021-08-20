@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ProdKeeper.Data;
-using ProdKeeper.Models;
+using ProdKeeper.Entity.Data;
+using ProdKeeper.Entity.Models;
 using ProdKeeper.Services;
 
 namespace ProdKeeper

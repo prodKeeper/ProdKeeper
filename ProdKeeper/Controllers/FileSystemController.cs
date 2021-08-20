@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProdKeeper.Data;
-using ProdKeeper.Services;
+using ProdKeeper.Entity.Data;
+using ProdKeeper.VirtualFileSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace ProdKeeper.Controllers
             FileSystemService fs= new FileSystemService(new FileSystemOption( this._context));
             var val = fs.GetFiles(path);
             var val2 = fs.GetFolders(path);
-            return val.Concat(val2);
+            return null;
             
         }
 

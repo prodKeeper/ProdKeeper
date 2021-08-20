@@ -3,7 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PocSMB.Adapters;
-using ProdKeeper.Data;
+using ProdKeeper.Entity.Data;
+using ProdKeeper.VirtualFileSystem;
+using SMBLibrary.Adapters;
 using SMBLibrary.Authentication.GSSAPI;
 using SMBLibrary.Authentication.NTLM;
 using SMBLibrary.Server;
@@ -30,7 +32,11 @@ namespace ProdKeeper.Services
         {
             NTLMAuthenticationProviderBase authenticationMechanism = new IndependentNTLMAuthenticationProvider(GetUserPassword);
             SMBShareCollection shares = new SMBShareCollection();
-            FileSystemShare share = new FileSystemShare("Json", new JSONFileSystemAdapter());
+            FileSystemOption fileoption = new FileSystemOption(_dbContext);
+            fileoption.StorePath = "c:\\Temp\\FileRepo";
+            var fileSystemService = new FileSystemService(fileoption);
+            var pka = new ProdKeeperSMBAdapter(fileSystemService);
+            FileSystemShare share = new FileSystemShare("ProdKeeper",new NTFileSystemAdapter(pka));
             shares.Add(share);
             GSSProvider securityProvider = new GSSProvider(authenticationMechanism);
             SMBServer server = new SMBServer(shares, securityProvider);

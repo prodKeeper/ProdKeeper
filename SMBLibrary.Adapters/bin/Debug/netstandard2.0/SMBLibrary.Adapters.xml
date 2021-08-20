@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMBLibrary.Adapters</name>
+    </assembly>
+    <members>
+        <member name="M:SMBLibrary.Adapters.NTFileSystemAdapter.ToNTStatus(System.Exception)">
+            <param name="exception">IFileSystem exception</param>
+        </member>
+        <member name="M:SMBLibrary.Adapters.NTFileSystemAdapter.GetAllocationSize(System.UInt64)">
+            <summary>
+            Will return a virtual allocation size, assuming 4096 bytes per cluster
+            </summary>
+        </member>
+        <member name="M:SMBLibrary.Adapters.NTFileSystemAdapter.QueryDirectory(System.Collections.Generic.List{SMBLibrary.QueryDirectoryFileInformation}@,System.Object,System.String,SMBLibrary.FileInformationClass)">
+            <param name="fileName">Expression as described in [MS-FSA] 2.1.4.4</param>
+        </member>
+        <member name="M:SMBLibrary.Adapters.NTFileSystemAdapter.GetFiltered(System.Collections.Generic.List{DiskAccessLibrary.FileSystems.Abstractions.FileSystemEntry},System.String)">
+            <param name="expression">Expression as described in [MS-FSA] 2.1.4.4</param>
+        </member>
+    </members>
+</doc>

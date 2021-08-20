@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProdKeeper.Models
+namespace ProdKeeper.Entity.Models
 {
     public class ApplicationUser : IdentityUser
     {

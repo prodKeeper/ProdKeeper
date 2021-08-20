@@ -10,3 +10,5 @@ C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\ne
 C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.csproj.CopyComplete
 C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.dll
 C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\obj\Debug\netcoreapp3.1\ProdKeeper.VirtualFileSystem.pdb
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\xvann\source\repos\ProdKeeper\ProdKeeper.VirtualFileSystem\bin\Debug\netcoreapp3.1\appsettings.json

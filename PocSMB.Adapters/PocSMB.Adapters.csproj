@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,6 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DiskAccessLibrary.FileSystems.Abstractions\DiskAccessLibrary.FileSystems.Abstractions.csproj" />
+    <ProjectReference Include="..\ProdKeeper.VirtualFileSystem\ProdKeeper.VirtualFileSystem.csproj" />
     <ProjectReference Include="..\SMBLibrary\SMBLibrary.csproj" />
   </ItemGroup>
 

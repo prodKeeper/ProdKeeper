@@ -1,0 +1,139 @@
+{
+  "shared": [
+    {
+      "name": "folder1",
+      "isFolder": true,
+      "creationTime": "2012-04-23T18:25:43.511Z",
+      "lastAccess": "2012-04-23T18:25:43.511Z",
+      "lastWrite": "2012-04-23T18:25:43.511Z",
+      "changeTime": "2012-04-23T18:25:43.511Z",
+      "path": "\\",
+      "children": [
+        {
+          "name": "folder3",
+          "isFolder": true,
+          "creationTime": "2012-04-23T18:25:43.511Z",
+          "lastAccess": "2012-04-23T18:25:43.511Z",
+          "lastWrite": "2012-04-23T18:25:43.511Z",
+          "changeTime": "2012-04-23T18:25:43.511Z",
+          "path": "\\folder1",
+
+          "children": [
+            {
+              "name": "File1.txt",
+              "isFolder": false,
+              "creationTime": "2012-04-23T18:25:43.511Z",
+              "lastAccess": "2012-04-23T18:25:43.511Z",
+              "lastWrite": "2012-04-23T18:25:43.511Z",
+              "changeTime": "2012-04-23T18:25:43.511Z",
+              "children": [],
+              "path": "\\folder1\\file1.txt"
+            },
+            {
+              "name": "File2.txt",
+              "isFolder": false,
+              "creationTime": "2012-04-23T18:25:43.511Z",
+              "lastAccess": "2012-04-23T18:25:43.511Z",
+              "lastWrite": "2012-04-23T18:25:43.511Z",
+              "changeTime": "2012-04-23T18:25:43.511Z",
+              "children": [],
+              "path": "\\folder1\\file2.txt"
+            },
+            {
+              "name": "File3.txt",
+              "isFolder": false,
+              "creationTime": "2012-04-23T18:25:43.511Z",
+              "lastAccess": "2012-04-23T18:25:43.511Z",
+              "lastWrite": "2012-04-23T18:25:43.511Z",
+              "changeTime": "2012-04-23T18:25:43.511Z",
+              "children": [],
+              "path": "\\folder1\\file3.txt"
+            },
+            {
+              "name": "File4.txt",
+              "isFolder": false,
+              "creationTime": "2012-04-23T18:25:43.511Z",
+              "lastAccess": "2012-04-23T18:25:43.511Z",
+              "lastWrite": "2012-04-23T18:25:43.511Z",
+              "changeTime": "2012-04-23T18:25:43.511Z",
+              "children": [],
+              "path": "\\folder1\\file4.txt"
+            }
+          ]
+        },
+        {
+          "name": "folder4",
+          "isFolder": true,
+          "creationTime": "2012-04-23T18:25:43.511Z",
+          "lastAccess": "2012-04-23T18:25:43.511Z",
+          "lastWrite": "2012-04-23T18:25:43.511Z",
+          "changeTime": "2012-04-23T18:25:43.511Z",
+          "path": "\\folder2",
+          "children": [
+            {
+              "name": "File5.txt",
+              "isFolder": false,
+              "creationTime": "2012-04-23T18:25:43.511Z",
+              "lastAccess": "2012-04-23T18:25:43.511Z",
+              "lastWrite": "2012-04-23T18:25:43.511Z",
+              "changeTime": "2012-04-23T18:25:43.511Z",
+              "children": [],
+              "path": "\\folder2\\file1.txt"
+            },
+            {
+              "name": "File6.txt",
+              "isFolder": false,
+              "creationTime": "2012-04-23T18:25:43.511Z",
+              "lastAccess": "2012-04-23T18:25:43.511Z",
+              "lastWrite": "2012-04-23T18:25:43.511Z",
+              "changeTime": "2012-04-23T18:25:43.511Z",
+              "children": [],
+              "path": "\\folder2\\file2.txt"
+            },
+            {
+              "name": "File7.txt",
+              "isFolder": false,
+              "creationTime": "2012-04-23T18:25:43.511Z",
+              "lastAccess": "2012-04-23T18:25:43.511Z",
+              "lastWrite": "2012-04-23T18:25:43.511Z",
+              "changeTime": "2012-04-23T18:25:43.511Z",
+              "children": [],
+              "path": "\\folder2\\file3.txt"
+            },
+            {
+              "name": "File8.txt",
+              "isFolder": false,
+              "creationTime": "2012-04-23T18:25:43.511Z",
+              "lastAccess": "2012-04-23T18:25:43.511Z",
+              "lastWrite": "2012-04-23T18:25:43.511Z",
+              "changeTime": "2012-04-23T18:25:43.511Z",
+              "children": [],
+              "path": "\\folder2\\file4.txt"
+            }
+          ]
+        },
+        {
+
+          "name": "File9.txt",
+          "isFolder": false,
+          "creationTime": "2012-04-23T18:25:43.511Z",
+          "lastAccess": "2012-04-23T18:25:43.511Z",
+          "lastWrite": "2012-04-23T18:25:43.511Z",
+          "changeTime": "2012-04-23T18:25:43.511Z",
+          "children": [],
+          "path": "\\file1.txt"
+        },
+        {
+          "name": "File10.txt",
+          "isFolder": false,
+          "creationTime": "2012-04-23T18:25:43.511Z",
+          "lastAccess": "2012-04-23T18:25:43.511Z",
+          "lastWrite": "2012-04-23T18:25:43.511Z",
+          "changeTime": "2012-04-23T18:25:43.511Z",
+          "children": [],
+          "path": "\\file2.txt"
+        }
+      ]
+    }
+  ]
+}

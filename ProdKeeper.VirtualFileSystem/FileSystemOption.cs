@@ -1,10 +1,10 @@
-﻿using ProdKeeper.Data;
+﻿using ProdKeeper.Entity.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProdKeeper.Services
+namespace ProdKeeper.VirtualFileSystem
 {
     public class FileSystemOption
     {

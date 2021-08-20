@@ -2,8 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProdKeeper.Data;
-using ProdKeeper.Services;
+using ProdKeeper.Entity.Data;
+using ProdKeeper.VirtualFileSystem;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -62,7 +62,12 @@ namespace ProdKeeper.Services.Tests
             if (viewID == Guid.Empty)
                 viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
             var fileContent = System.IO.File.ReadAllBytes("c:\\temp\\testpdf.pdf");
-            fileSystemService.SaveFile(string.Format("{0}/Geographie/Europe/France/Lorraine/file.pdf", viewID.ToString()), fileContent);
+            var filePath = string.Format("{0}/Geographie/Europe/France/Lorraine/file.pdf", viewID.ToString());
+            fileSystemService.CreateFile(filePath);
+            using (var stream = fileSystemService.OpenFile(filePath, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write, System.IO.FileShare.Read))
+            {
+                stream.Write(fileContent, 0, fileContent.Length);
+            }
             var items = _context.Item;
             if (items.Where(i => i.Libelle == "file.pdf") == null)
                 Assert.Fail();
@@ -71,7 +76,7 @@ namespace ProdKeeper.Services.Tests
         [TestMethod()]
         public void GetFoldersTest()
         {
-            
+
             if (viewID == Guid.Empty)
                 viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
             var folderFrance = fileSystemService.GetFolders(string.Format("{0}/Geographie/Europe/France/", viewID.ToString()));
@@ -87,7 +92,11 @@ namespace ProdKeeper.Services.Tests
             var fileContent = System.IO.File.ReadAllBytes("c:\\temp\\testpdf.pdf");
             string filePath = string.Format("{0}/Geographie/Europe/France/Lorraine/fileToDelete.pdf", viewID.ToString());
             Trace.WriteLine(filePath);
-            fileSystemService.SaveFile(filePath, fileContent);
+            fileSystemService.CreateFile(filePath);
+            using (var stream = fileSystemService.OpenFile(filePath, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write, System.IO.FileShare.Read))
+            {
+                stream.Write(fileContent, 0, fileContent.Length);
+            }
             fileSystemService.DeleteFile(filePath);
         }
 

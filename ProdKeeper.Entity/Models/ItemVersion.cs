@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace ProdKeeper.Models
+namespace ProdKeeper.Entity.Models
 {
     public partial class ItemVersion
     {
@@ -17,7 +17,7 @@ namespace ProdKeeper.Models
         public int Id { get; set; }
         public int Iditem { get; set; }
         public double Version { get; set; }
-        public string FilePath { get; set; }
+        public Guid FilePath { get; set; }
         public DateTime DateCreated { get; set; }
 
         public virtual Item IditemNavigation { get; set; }

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "4ykE0JAL0G4nfLCWl1ofWHp6hAvQipmPcA/ZbddgzkhwMHCAAJUlUxR8M7DedfJ4a/nJ7NIFMMPYNUkXI5nO0w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\xvann\\source\\repos\\ProdKeeper\\SMBLibrary.Adapters\\SMBLibrary.Adapters.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xvann\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\xvann\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\xvann\\.nuget\\packages\\smblibrary\\1.4.6.1\\smblibrary.1.4.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}

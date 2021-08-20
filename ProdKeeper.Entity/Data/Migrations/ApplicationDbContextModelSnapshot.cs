@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ProdKeeper.Data;
+using ProdKeeper.Entity.Data;
 using System;
 
 namespace ProdKeeper.Data.Migrations

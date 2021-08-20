@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using ProdKeeper.Models;
+using ProdKeeper.Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProdKeeper.Data
+namespace ProdKeeper.Entity.Data
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
@@ -105,6 +105,10 @@ namespace ProdKeeper.Data
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.DateCreated)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Idkey).HasColumnName("IDKey");
 

@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Routing.Template;
-using ProdKeeper.Data;
+using ProdKeeper.Entity.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.IO;
 
-namespace ProdKeeper.Services
+namespace ProdKeeper.VirtualFileSystem
 {
     public class FileSystemService
     {
@@ -26,10 +27,14 @@ namespace ProdKeeper.Services
             Dictionary<string, string> dicReturn = new Dictionary<string, string>();
             if (path.Contains("\\"))
                 path = path.Replace("\\", "/");
+            if (path.StartsWith("/"))
+                path = path.Substring(1);
             if (!path.EndsWith("/"))
                 path = path + "/";
 
             var viewID = path.Split("/")[0];
+            if (string.IsNullOrWhiteSpace(viewID))
+                throw new Exception("No view");
             path = path.Replace(viewID, "");
             if (!path.EndsWith("/"))
                 path = path + "/";
@@ -60,7 +65,7 @@ namespace ProdKeeper.Services
             var view = (from v in _context.PatternsRepository where v.Patterns == Pattern select v).FirstOrDefault();
             if (view != null)
                 return view.Id;
-            var pattern = new Models.PatternsRepository();
+            var pattern = new ProdKeeper.Entity.Models.PatternsRepository();
             pattern.Libelle = libelle;
             pattern.Patterns = Pattern;
             _context.PatternsRepository.Add(pattern);
@@ -68,10 +73,87 @@ namespace ProdKeeper.Services
             return pattern.Id;
         }
 
-        public string[] GetFolders(string path)
+        public FileSystemItem[] GetViews()
+        {
+            List<FileSystemItem> lstFSI = new List<FileSystemItem>();
+            var viewIDS = from v in _context.PatternsRepository select v.Id;
+            foreach (var view in viewIDS)
+            {
+                FileSystemItem fsi = new FileSystemItem();
+                fsi.FullName = System.IO.Path.Combine("\\",view.ToString());
+                fsi.IsDirectory = true;
+                fsi.Name = view.ToString();
+                fsi.DateCreated = DateTime.Now.AddDays(-1);
+                fsi.AccessTime = DateTime.Now;
+                fsi.DateModified = DateTime.Now.AddDays(-1);
+                lstFSI.Add(fsi);
+            }
+            return lstFSI.ToArray();
+        }
+
+        public FileSystemItem GetItem(string path)
+        {
+            if (path == "\\")
+                return GetRootFolder();
+            Entity.Models.Item file;
+            try
+            {
+                file = GetFile(path);
+            }
+            catch
+            {
+                return GetFolder(path);
+            }
+            if (file == null)
+                return GetFolder(path);
+            FileSystemItem fsi = new FileSystemItem();
+            fsi.FullName = path;
+            fsi.IsDirectory = false;
+            fsi.Name = file.Libelle;
+            var pathFile = System.IO.Path.Combine(this.docRepoStore, file.ItemVersion.OrderByDescending(i => i.Version).FirstOrDefault().FilePath.ToString());
+            var fi=new System.IO.FileInfo(pathFile);
+            fsi.Size =(ulong) fi.Length;
+            fsi.AccessTime = fi.LastAccessTime;
+            fsi.DateCreated = fi.CreationTime;
+            fsi.DateModified = fi.LastWriteTime;
+            return fsi;
+        }
+
+        private FileSystemItem GetRootFolder()
+        {
+            FileSystemItem fsi = new FileSystemItem();
+            fsi.FullName = "\\";
+            fsi.IsDirectory = true;
+            fsi.Name = "\\";
+            fsi.DateCreated = DateTime.Now.AddDays(-1);
+            fsi.AccessTime = DateTime.Now;
+            fsi.DateModified = DateTime.Now.AddDays(-1);
+            return fsi;
+
+        }
+
+        public FileSystemItem GetFolder(string path)
+        {
+            (var keyToFind, var dic) = parseString(path);
+            foreach (var k in keyToFind)
+            {
+                if (!dic.Keys.Contains(k))
+                {
+                    return (from v in GetViews() where v.Name== path.Substring(1) select v).FirstOrDefault() ;
+                }
+
+            }
+            var folder = System.IO.Path.GetDirectoryName(path);
+            FileSystemItem fsi = new FileSystemItem();
+            fsi.FullName = path; 
+            fsi.IsDirectory = true;
+            fsi.Name = folder;
+            return fsi;
+        }
+        public FileSystemItem[] GetFolders(string path)
         {
             List<string> lstReturn = new List<string>();
-            //https://localhost:5001/FileSystem/1540CA18-4EA1-4285-B3DA-83ED6DADAABE/Europe/France/
+            List<FileSystemItem> lstFSI = new List<FileSystemItem>();
             (var keyToFind, var dic) = parseString(path);
             var parentFolder = System.IO.Directory.GetParent(path).Name;
 
@@ -85,23 +167,45 @@ namespace ProdKeeper.Services
                     break;
                 }
             }
-            return lstReturn.ToArray();
+            foreach (var folder in lstReturn)
+            {
+                FileSystemItem fsi = new FileSystemItem();
+                fsi.FullName = System.IO.Path.Combine(path, folder); ;
+                fsi.IsDirectory = true;
+                fsi.Name = folder;
+                lstFSI.Add(fsi);
+            }
+            return lstFSI.ToArray();
         }
 
-        public string[] GetFiles(string path)
+        public FileSystemItem[] GetFiles(string path)
         {
             (var keyToFind, var dic) = parseString(path);
-
+            List<FileSystemItem> lstFSI = new List<FileSystemItem>();
             var meta = (from m in _context.MetadataValues.Include(m => m.IdkeyNavigation) where dic.Keys.Any(d => d == m.IdkeyNavigation.Libelle) && dic.Values.Any(d => d == m.Libelle) select m).AsEnumerable();
             var item = (from i in _context.ItemVersion.Include(i => i.ItemMetadata).Include(i => i.IditemNavigation) where i.IditemNavigation.IsDeleted == false && i.ItemMetadata.Any(im => meta.Any(m => m.Id == im.IdmetadataValue)) select i).AsEnumerable();
             var itemFilter = item.Where(i => i.ItemMetadata.Select(im => im.IdmetadataValue).ToArray<int>().SequenceEqual(meta.Select(m => m.Id).ToArray<int>()));
-            return itemFilter.Select(i => i.IditemNavigation.Libelle).ToArray();
+            
+
+            foreach (var file in itemFilter)
+            {
+                FileSystemItem fsi = new FileSystemItem();
+                fsi.FullName = System.IO.Path.Combine( path, file.IditemNavigation.Libelle) ;
+                fsi.Name = file.IditemNavigation.Libelle;
+                fsi.IsDirectory = false;
+                fsi.IsArchive = false;
+                fsi.IsHidden = false;
+                fsi.DateCreated = file.DateCreated;
+                lstFSI.Add(fsi);
+            }
+            return lstFSI.ToArray();
         }
 
-        public Models.Item GetFile(string path)
+        private ProdKeeper.Entity.Models.Item GetFile(string path)
         {
             var dirName = System.IO.Path.GetDirectoryName(path);
             var fileName = System.IO.Path.GetFileName(path);
+             
             (var keyToFind, var dic) = parseString(dirName);
 
             var meta = (from m in _context.MetadataValues.Include(m => m.IdkeyNavigation) where dic.Keys.Any(d => d == m.IdkeyNavigation.Libelle) && dic.Values.Any(d => d == m.Libelle) select m).AsEnumerable();
@@ -110,51 +214,54 @@ namespace ProdKeeper.Services
             return itemFilter.FirstOrDefault();
         }
 
-        public void SaveFile(string path, byte[] content)
+        public FileSystemItem CreateFile(string path)
         {
             var item = GetFile(path);
-            Models.ItemVersion itemVersion = new Models.ItemVersion(); ;
-            System.IO.FileInfo fi = SaveFileContent(content);
+            ProdKeeper.Entity.Models.ItemVersion itemVersion = new ProdKeeper.Entity.Models.ItemVersion(); ;
             (var keyToFind, var dic) = parseString(System.IO.Path.GetDirectoryName(path));
             CreateFolder(System.IO.Path.GetDirectoryName(path));
             var filename = System.IO.Path.GetFileName(path);
             if (item == null)
             {
-                item = new Models.Item();
+                item = new ProdKeeper.Entity.Models.Item();
                 _context.Item.Add(item);
-                item.DateCreated = fi.CreationTime;
             }
             item.ItemVersion.Add(itemVersion);
-            itemVersion.FilePath = fi.Name;
-            itemVersion.DateCreated = fi.CreationTime;
-            item.DateLastAccess = fi.LastWriteTime;
-            item.Archive = ((fi.Attributes & System.IO.FileAttributes.Archive) == System.IO.FileAttributes.Archive);
-            item.Hidden = ((fi.Attributes & System.IO.FileAttributes.Hidden) == System.IO.FileAttributes.Hidden);
-            item.ReadOnly = ((fi.Attributes & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly);
             item.Libelle = filename;
+            itemVersion.FilePath = Guid.NewGuid();
             foreach (var d in dic)
             {
-                var im = new Models.ItemMetadata();
+                var im = new ProdKeeper.Entity.Models.ItemMetadata();
                 int mvID = _context.MetadataValues.Where(mv => mv.Libelle == d.Value).Select(mv => mv.Id).First();
                 im.IdmetadataValue = mvID;
+                
                 itemVersion.ItemMetadata.Add(im);
             }
             _context.SaveChanges();
+            FileSystemItem fsi = new FileSystemItem();
+            fsi.FullName = path;
+            fsi.Name = filename;
+            fsi.IsDirectory = false;
+            fsi.IsArchive = false;
+            fsi.IsHidden = false;
+            fsi.DateCreated = itemVersion.DateCreated;
+            return fsi;
         }
-
-        private System.IO.FileInfo SaveFileContent(byte[] content)
+        
+        public Stream OpenFile(string path, FileMode mode, FileAccess access, FileShare share, FileOptions options=FileOptions.None)
         {
-            Guid guidFile = Guid.NewGuid();
-            string path = System.IO.Path.Combine(this.docRepoStore, guidFile.ToString());
-            System.IO.File.WriteAllBytes(path, content);
-            System.IO.FileInfo fi = new System.IO.FileInfo(path);
-            return fi;
+            var file = GetFile(path);
+            var fileVersion= file.ItemVersion.OrderByDescending(iv => iv.Version).FirstOrDefault();
+            var filePath=System.IO.Path.Combine(this.docRepoStore, fileVersion.FilePath.ToString());
+            FileStream fs = new FileStream(filePath, mode, access,share,4096,options);
+            return fs;
         }
 
 
-        public void CreateFolder(string path)
+        public FileSystemItem CreateFolder(string path)
         {
             (var keyToFind, var dic) = parseString(path);
+            string folderCreated = "";
             foreach (var d in dic)
             {
                 var mk = _context.MetadataKey.Include(m => m.MetadataValues).Where(mk => mk.Libelle == d.Key).FirstOrDefault();
@@ -162,19 +269,25 @@ namespace ProdKeeper.Services
                     mk = CreateMetaData(d.Key);
                 if (mk.MetadataValues.Where(mv => mv.Libelle == d.Value).Count() == 0)
                 {
-                    var mv = new Models.MetadataValues();
+                    var mv = new ProdKeeper.Entity.Models.MetadataValues();
                     mv.Libelle = d.Value;
                     mk.MetadataValues.Add(mv);
+                    folderCreated = d.Value;
                 }
 
             }
             _context.SaveChanges();
+            FileSystemItem fsi = new FileSystemItem();
+            fsi.FullName = path;
+            fsi.IsDirectory = true;
+            fsi.Name = folderCreated;
+            return fsi;
         }
 
-        public Models.MetadataKey CreateMetaData(string Libelle)
+        public ProdKeeper.Entity.Models.MetadataKey CreateMetaData(string Libelle)
         {
 
-            var mk = new Models.MetadataKey();
+            var mk = new ProdKeeper.Entity.Models.MetadataKey();
             mk.Libelle = Libelle;
             _context.MetadataKey.Add(mk);
             _context.SaveChanges();
@@ -226,9 +339,9 @@ namespace ProdKeeper.Services
 
         }
 
-        private void DeleteFileContent(string filePath)
+        private void DeleteFileContent(Guid filePath)
         {
-            string path = System.IO.Path.Combine(this.docRepoStore, filePath);
+            string path = System.IO.Path.Combine(this.docRepoStore, filePath.ToString());
             System.IO.File.Delete(path);
         }
     }
