@@ -412,6 +412,7 @@ namespace SMBLibrary.Adapters
                 Array.Copy(data, temp, bytesRead);
                 data = temp;
             }
+            m_fileSystem.AccessFile(fileHandle.Path, true, false);
             return NTStatus.STATUS_SUCCESS;
         }
 
@@ -446,6 +447,8 @@ namespace SMBLibrary.Adapters
                 }
             }
             numberOfBytesWritten = data.Length;
+            m_fileSystem.AccessFile(fileHandle.Path, false, true);
+            m_fileSystem.CreationVersion(fileHandle.Path);
             return NTStatus.STATUS_SUCCESS;
         }
 
@@ -573,14 +576,14 @@ namespace SMBLibrary.Adapters
             const FileOptions FILE_FLAG_OPEN_REPARSE_POINT = (FileOptions)0x00200000;
             const FileOptions FILE_FLAG_NO_BUFFERING = (FileOptions)0x20000000;
             FileOptions result = FileOptions.None;
-            if ((createOptions & CreateOptions.FILE_OPEN_REPARSE_POINT) > 0)
-            {
-                result |= FILE_FLAG_OPEN_REPARSE_POINT;
-            }
-            if ((createOptions & CreateOptions.FILE_NO_INTERMEDIATE_BUFFERING) > 0)
-            {
-                result |= FILE_FLAG_NO_BUFFERING;
-            }
+            //if ((createOptions & CreateOptions.FILE_OPEN_REPARSE_POINT) > 0)
+            //{
+            //    result |= FILE_FLAG_OPEN_REPARSE_POINT;
+            //}
+            //if ((createOptions & CreateOptions.FILE_NO_INTERMEDIATE_BUFFERING) > 0)
+            //{
+            //    result |= FILE_FLAG_NO_BUFFERING;
+            //}
             if ((createOptions & CreateOptions.FILE_RANDOM_ACCESS) > 0)
             {
                 result |= FileOptions.RandomAccess;

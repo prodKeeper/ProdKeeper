@@ -22,6 +22,8 @@ namespace DiskAccessLibrary.FileSystems.Abstractions
         public abstract void SetAttributes(string path, bool? isHidden, bool? isReadonly, bool? isArchived);
         public abstract void SetDates(string path, DateTime? creationDT, DateTime? lastWriteDT, DateTime? lastAccessDT);
 
+        public abstract void AccessFile(string path, bool isRead, bool isWrite);
+
         public List<FileSystemEntry> ListEntriesInRootDirectory()
         {
             return ListEntriesInDirectory(@"\");
@@ -77,9 +79,10 @@ namespace DiskAccessLibrary.FileSystems.Abstractions
 
         public virtual bool Exists(string path)
         {
+            FileSystemEntry fe = null;
             try
             {
-                GetEntry(path);
+                fe=GetEntry(path);
             }
             catch (FileNotFoundException)
             {
@@ -90,9 +93,9 @@ namespace DiskAccessLibrary.FileSystems.Abstractions
                 return false;
             }
 
-            return true;
+            return fe!=null;
         }
-
+        public abstract void CreationVersion(string path);
         public abstract string Name
         {
             get;

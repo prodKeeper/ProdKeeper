@@ -16,9 +16,11 @@ namespace ProdKeeper.Entity.Models
 
         public int Id { get; set; }
         public int Iditem { get; set; }
-        public double Version { get; set; }
+        public int MajorVersion { get; set; }
+        public int MinorVersion { get; set; }
         public Guid FilePath { get; set; }
         public DateTime DateCreated { get; set; }
+        public bool IsSync { get; set; }
 
         public virtual Item IditemNavigation { get; set; }
         public virtual ICollection<ItemMetadata> ItemMetadata { get; set; }

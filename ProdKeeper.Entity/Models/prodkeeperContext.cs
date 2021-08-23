@@ -220,6 +220,8 @@ namespace ProdKeeper.Entity.Models
 
                 entity.Property(e => e.Iditem).HasColumnName("IDItem");
 
+                entity.Property(e => e.MinorVersion).HasDefaultValueSql("((1))");
+
                 entity.HasOne(d => d.IditemNavigation)
                     .WithMany(p => p.ItemVersion)
                     .HasForeignKey(d => d.Iditem)

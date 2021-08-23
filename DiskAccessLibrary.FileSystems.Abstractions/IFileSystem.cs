@@ -67,6 +67,10 @@ namespace DiskAccessLibrary.FileSystems.Abstractions
         /// <exception cref="System.UnauthorizedAccessException"></exception>
         void SetDates(string path, DateTime? creationDT, DateTime? lastWriteDT, DateTime? lastAccessDT);
 
+        void AccessFile(string path, bool isRead, bool isWrite);
+        void CreationVersion(string path);
+
+
         string Name
         {
             get; 

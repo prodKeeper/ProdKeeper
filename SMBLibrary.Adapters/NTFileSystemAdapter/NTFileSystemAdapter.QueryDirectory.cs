@@ -176,8 +176,11 @@ namespace SMBLibrary.Adapters
             List<QueryDirectoryFileInformation> result = new List<QueryDirectoryFileInformation>();
             foreach (FileSystemEntry entry in entries)
             {
-                QueryDirectoryFileInformation information = FromFileSystemEntry(entry, informationClass);
-                result.Add(information);
+                if (entry != null)
+                {
+                    QueryDirectoryFileInformation information = FromFileSystemEntry(entry, informationClass);
+                    result.Add(information);
+                }
             }
             return result;
         }

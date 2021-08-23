@@ -41,12 +41,12 @@ namespace ProdKeeper.Services.Tests
         [TestMethod()]
         public void CreateFolderTest()
         {
-            viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
-            fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/France/Lorraine/", viewID.ToString()));
-            fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/France/Ile de france/", viewID.ToString()));
-            fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/Belgique/Luxembourg/", viewID.ToString()));
-            fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/Belgique/Namur/", viewID.ToString()));
-            fileSystemService.CreateFolder(string.Format("{0}/Geographie/Europe/Allemagne/Sarre/", viewID.ToString()));
+            viewID = fileSystemService.CreateView("Test", "/{Continent?}/{Pays?}/{Region?}/");
+            fileSystemService.CreateFolder(string.Format("{0}/Europe/France/Lorraine/", viewID.ToString()));
+            fileSystemService.CreateFolder(string.Format("{0}/Europe/France/Ile de france/", viewID.ToString()));
+            fileSystemService.CreateFolder(string.Format("{0}/Europe/Belgique/Luxembourg/", viewID.ToString()));
+            fileSystemService.CreateFolder(string.Format("{0}/Europe/Belgique/Namur/", viewID.ToString()));
+            fileSystemService.CreateFolder(string.Format("{0}/Europe/Allemagne/Sarre/", viewID.ToString()));
             var keys = _context.MetadataKey;
             var vals = _context.MetadataValues;
             if (keys.Where(k => k.Libelle == "Continent") == null || keys.Where(k => k.Libelle == "Pays") == null || keys.Where(k => k.Libelle == "Region") == null)
@@ -60,9 +60,9 @@ namespace ProdKeeper.Services.Tests
         public void SaveFileTest()
         {
             if (viewID == Guid.Empty)
-                viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
+                viewID = fileSystemService.CreateView("Test", "/{Continent?}/{Pays?}/{Region?}/");
             var fileContent = System.IO.File.ReadAllBytes("c:\\temp\\testpdf.pdf");
-            var filePath = string.Format("{0}/Geographie/Europe/France/Lorraine/file.pdf", viewID.ToString());
+            var filePath = string.Format("{0}/Europe/France/Lorraine/file.pdf", viewID.ToString());
             fileSystemService.CreateFile(filePath);
             using (var stream = fileSystemService.OpenFile(filePath, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write, System.IO.FileShare.Read))
             {
@@ -78,19 +78,19 @@ namespace ProdKeeper.Services.Tests
         {
 
             if (viewID == Guid.Empty)
-                viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
-            var folderFrance = fileSystemService.GetFolders(string.Format("{0}/Geographie/Europe/France/", viewID.ToString()));
-            var folderBelgique = fileSystemService.GetFolders(string.Format("{0}/Geographie/Europe/Belgique/", viewID.ToString()));
-            var folderAllemagne = fileSystemService.GetFolders(string.Format("{0}/Geographie/Europe/Allemagne/", viewID.ToString()));
+                viewID = fileSystemService.CreateView("Test", "/{Continent?}/{Pays?}/{Region?}/");
+            var folderFrance = fileSystemService.GetFolders(string.Format("{0}/Europe/France/", viewID.ToString()));
+            var folderBelgique = fileSystemService.GetFolders(string.Format("{0}/Europe/Belgique/", viewID.ToString()));
+            var folderAllemagne = fileSystemService.GetFolders(string.Format("{0}/Europe/Allemagne/", viewID.ToString()));
         }
 
         [TestMethod()]
         public void DeleteFileTest()
         {
             if (viewID == Guid.Empty)
-                viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
+                viewID = fileSystemService.CreateView("Test", "/{Continent?}/{Pays?}/{Region?}/");
             var fileContent = System.IO.File.ReadAllBytes("c:\\temp\\testpdf.pdf");
-            string filePath = string.Format("{0}/Geographie/Europe/France/Lorraine/fileToDelete.pdf", viewID.ToString());
+            string filePath = string.Format("{0}/Europe/France/Lorraine/fileToDelete.pdf", viewID.ToString());
             Trace.WriteLine(filePath);
             fileSystemService.CreateFile(filePath);
             using (var stream = fileSystemService.OpenFile(filePath, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write, System.IO.FileShare.Read))
@@ -103,15 +103,15 @@ namespace ProdKeeper.Services.Tests
         [TestMethod()]
         public void CreateViewTest()
         {
-            viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
+            viewID = fileSystemService.CreateView("Test", "/{Continent?}/{Pays?}/{Region?}/");
             var repo = _context.PatternsRepository;
         }
 
         [TestMethod()]
         public void DeleteFolderTest()
         {
-            viewID = fileSystemService.CreateView("Test", "/Geographie/{Continent?}/{Pays?}/{Region?}/");
-            var folder = string.Format("{0}/Geographie/Europe/France/Nord-Pas-De-Calais/", viewID.ToString());
+            viewID = fileSystemService.CreateView("Test", "/{Continent?}/{Pays?}/{Region?}/");
+            var folder = string.Format("{0}/Europe/France/Nord-Pas-De-Calais/", viewID.ToString());
             fileSystemService.CreateFolder(folder);
             fileSystemService.DeleteFolder(folder);
         }

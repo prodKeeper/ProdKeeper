@@ -25,6 +25,11 @@ namespace PocSMB.Adapters
 
         public override bool SupportsNamedStreams => false;
 
+        public override void AccessFile(string path, bool isRead, bool isWrite)
+        {
+            _fss.AccessFile( path,  isRead,  isWrite);
+        }
+
         public override FileSystemEntry CreateDirectory(string path)
         {
             var fsi = _fss.CreateFolder(path);
@@ -32,6 +37,10 @@ namespace PocSMB.Adapters
             return fse;
         }
 
+        public override void CreationVersion(string path)
+        {
+            _fss.CreateVersion(path);
+        }
         public override FileSystemEntry CreateFile(string path)
         {
             var fsi = _fss.CreateFile(path);
@@ -57,7 +66,16 @@ namespace PocSMB.Adapters
                 return null;
             }
             if (fsi == null)
+            {
+                //fsi = new FileSystemItem();
+                //fsi.FullName = path;
+                //fsi.Name = System.IO.Path.GetFileName(path);
+                //fsi.Size = 0;
+                //fsi.DateCreated = fsi.DateModified = fsi.AccessTime = DateTime.Now;
+                //fsi.IsDirectory = false;
                 return null;
+            }
+               
             FileSystemEntry fse = new FileSystemEntry(fsi.FullName, fsi.Name, fsi.IsDirectory, fsi.Size, fsi.DateCreated, fsi.DateModified, fsi.AccessTime, fsi.IsHidden, false, fsi.IsArchive);
             return fse;
         }
@@ -96,7 +114,8 @@ namespace PocSMB.Adapters
 
         public override void Move(string source, string destination)
         {
-            throw new NotImplementedException();
+            _fss.MoveFile(source, destination);
+
         }
 
         public override Stream OpenFile(string path, FileMode mode, FileAccess access, FileShare share, FileOptions options)
@@ -106,12 +125,12 @@ namespace PocSMB.Adapters
 
         public override void SetAttributes(string path, bool? isHidden, bool? isReadonly, bool? isArchived)
         {
-            throw new NotImplementedException();
+            _fss.SetAttributes(path, isHidden, isReadonly, isArchived);
         }
 
         public override void SetDates(string path, DateTime? creationDT, DateTime? lastWriteDT, DateTime? lastAccessDT)
         {
-            throw new NotImplementedException();
+            _fss.SetDate(path, creationDT, lastWriteDT, lastAccessDT);
         }
     }
 }
