@@ -448,7 +448,6 @@ namespace SMBLibrary.Adapters
             }
             numberOfBytesWritten = data.Length;
             m_fileSystem.AccessFile(fileHandle.Path, false, true);
-            m_fileSystem.CreationVersion(fileHandle.Path);
             return NTStatus.STATUS_SUCCESS;
         }
 
@@ -459,6 +458,7 @@ namespace SMBLibrary.Adapters
             {
                 fileHandle.Stream.Flush();
             }
+            m_fileSystem.CreationVersion(fileHandle.Path);
             return NTStatus.STATUS_SUCCESS;
         }
 

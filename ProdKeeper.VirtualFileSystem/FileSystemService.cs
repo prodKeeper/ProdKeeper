@@ -59,6 +59,15 @@ namespace ProdKeeper.VirtualFileSystem
             return (keyToReturn, dicReturn);
         }
 
+        public void DeleteItem(string path)
+        {
+            var item=GetItem(path);
+            if (item.IsDirectory)
+                DeleteFolder(path);
+            else
+                DeleteFile(path);
+        }
+
         public void AccessFile(string path, bool isRead, bool isWrite)
         {
             var file=GetFile(path);
@@ -203,7 +212,7 @@ namespace ProdKeeper.VirtualFileSystem
             List<FileSystemItem> lstFSI = new List<FileSystemItem>();
             var meta = (from m in _context.MetadataValues.Include(m => m.IdkeyNavigation) where dic.Keys.Any(d => d == m.IdkeyNavigation.Libelle) && dic.Values.Any(d => d == m.Libelle) select m).AsEnumerable();
             var item = (from i in _context.ItemVersion.Include(i => i.ItemMetadata).Include(i => i.IditemNavigation) where i.IditemNavigation.IsDeleted == false && i.ItemMetadata.Any(im => meta.Any(m => m.Id == im.IdmetadataValue)) select i).AsEnumerable();
-            var itemFilter = item.Where(i => i.ItemMetadata.Select(im => im.IdmetadataValue).ToArray<int>().SequenceEqual(meta.Select(m => m.Id).ToArray<int>()));
+            var itemFilter = item.Where(i => i.ItemMetadata.Select(im => im.IdmetadataValue).OrderBy(i=>i).ToArray<int>().SequenceEqual(meta.Select(m => m.Id).OrderBy(i => i).ToArray<int>()));
 
 
             foreach (var file in itemFilter)
@@ -231,7 +240,7 @@ namespace ProdKeeper.VirtualFileSystem
 
             var meta = (from m in _context.MetadataValues.Include(m => m.IdkeyNavigation) where dic.Keys.Any(d => d == m.IdkeyNavigation.Libelle) && dic.Values.Any(d => d == m.Libelle) select m).AsEnumerable();
             var item = (from i in _context.ItemVersion.Include(i => i.ItemMetadata).Include(i => i.IditemNavigation) where i.IditemNavigation.IsDeleted == false && i.ItemMetadata.Any(im => meta.Any(m => m.Id == im.IdmetadataValue)) && i.IditemNavigation.Libelle == fileName select i).AsEnumerable();
-            var itemFilter = item.Where(i => i.ItemMetadata.Select(im => im.IdmetadataValue).ToArray<int>().SequenceEqual(meta.Select(m => m.Id).ToArray<int>())).Select(i => i.IditemNavigation);
+            var itemFilter = item.Where(i => i.ItemMetadata.Select(im => im.IdmetadataValue).OrderBy(i => i).ToArray<int>().SequenceEqual(meta.Select(m => m.Id).OrderBy(i => i).ToArray<int>())).Select(i => i.IditemNavigation);
             return itemFilter.FirstOrDefault();
         }
 
@@ -327,7 +336,9 @@ namespace ProdKeeper.VirtualFileSystem
             if (files.Length > 0)
                 throw new Exception("Can't delete non empty file");
 
-            var folderToDelete = System.IO.Directory.GetParent(path).Name;
+            if (path.EndsWith("\\"))
+                path = path.Substring(0, path.Length - 1);
+            var folderToDelete = path.Split("\\").Last();
             var metaval = (from val in _context.MetadataValues where val.Libelle == folderToDelete select val).FirstOrDefault();
             if (metaval == null)
                 throw new Exception("Folder does not exist");

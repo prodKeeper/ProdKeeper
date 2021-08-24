@@ -11,6 +11,7 @@ using SMBLibrary.Authentication.NTLM;
 using SMBLibrary.Server;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -41,12 +42,24 @@ namespace ProdKeeper.Services
             GSSProvider securityProvider = new GSSProvider(authenticationMechanism);
             SMBServer server = new SMBServer(shares, securityProvider);
             server.Start(System.Net.IPAddress.Any, SMBLibrary.SMBTransportType.DirectTCPTransport, false, true, true);
+            //server.LogEntryAdded += Server_LogEntryAdded;
             while (!stoppingToken.IsCancellationRequested)
             {
 
 
             }
         }
+
+        private void Server_LogEntryAdded(object sender, Utilities.LogEntry e)
+        {
+            using (FileStream fs = new FileStream("c:\\temp\\Logs.txt", FileMode.OpenOrCreate|FileMode.Append, FileAccess.Write))
+            {
+                string Message = string.Format("{0}:{1}\t{2}\t{3}\n", e.Time, e.Severity, e.Source, e.Message);
+                fs.Write(System.Text.Encoding.UTF8.GetBytes(Message));
+                fs.Flush();
+            }
+        }
+
         public string GetUserPassword(string accountName)
         {
             var password = (from u in _dbContext.Users where u.Email == accountName select u.PasswordHash).FirstOrDefault();

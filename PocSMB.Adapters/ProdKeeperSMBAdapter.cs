@@ -51,7 +51,7 @@ namespace PocSMB.Adapters
 
         public override void Delete(string path)
         {
-            _fss.DeleteFile(path);
+            _fss.DeleteItem(path);
         }
 
         public override FileSystemEntry GetEntry(string path)
